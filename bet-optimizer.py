@@ -48,7 +48,7 @@ if st.button("Optimize"):
 
     output = f"""
             | Scenario | Odds | Stake | Reward |
-            |------------------|------------------|------------------|------------------ |
+            |------------------|------------------|------------------|------------------|
             | Win | {odds_a} |{stake_win} | {reward_win} |
             | Draw | {odds_b} | {stake_draw} | {reward_draw} |
             | Lose | {odds_c} | {stake_lose} | {reward_lose} |
