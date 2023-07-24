@@ -11,4 +11,4 @@ load_dotenv('secrets.env')
 
 weights_url = os.environ.get("DATA")
 
-weights = pd.read_parquet(weights_url)
+weights = pd.read_parquet(weights_url).values
