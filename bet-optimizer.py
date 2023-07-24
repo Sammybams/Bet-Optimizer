@@ -31,12 +31,16 @@ if st.button("Optimize"):
         score.append([i, [a_wa, b_wb, c_wc]])
 
     sorted_scores = sorted(score, key = lambda x: min(x[1]))
+    weights_best_score = weights[sorted_scores[-1][0]]
     best_score = sorted_scores[-1][1]
-    loc_best_score = weights[sorted_scores[-1][0]]
 
-    stake_win = round(amount*best_score[0],3)
-    stake_draw = round(amount*best_score[1],3)
-    stake_lose = round(amount*best_score[2],3)
+    stake_win = round(amount*weights_best_score[0],3)
+    stake_draw = round(amount*weights_best_score[1],3)
+    stake_lose = round(amount*weights_best_score[2],3)
+
+    reward_win = round(amount*best_score[0],3)
+    reward_draw = round(amount*best_score[1],3)
+    reward_lose = round(amount*best_score[2],3)
 
     if min(best_score) <= 1:
         best_payout = max([stake_win, stake_draw, stake_lose])
@@ -45,9 +49,9 @@ if st.button("Optimize"):
         output = f"""
                 | Scenario | Stake | Reward |
                 |------------------|------------------|
-                | Win | {stake_win} | {stake_win} |
-                | Draw | {stake_draw} | {stake_draw} |
-                | Lose | {stake_lose} | {stake_lose} |
+                | Win | {stake_win} | {reward_win} |
+                | Draw | {stake_draw} | {reward_draw} |
+                | Lose | {stake_lose} | {reward_lose} |
                 """
         st.markdown(output)
 
