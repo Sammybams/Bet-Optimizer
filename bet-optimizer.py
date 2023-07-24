@@ -31,3 +31,8 @@ for i, value in enumerate(weights):
     score_c = c_wc - (w_a + w_b)
 
     score.append([i, [a_wa, b_wb, c_wc]])
+
+sorted_scores = sorted(score, key = lambda x: min(x[1]))
+best_score = sorted_scores[-1][1]
+loc_best_score = weights[sorted_scores[-1][0]]
+
