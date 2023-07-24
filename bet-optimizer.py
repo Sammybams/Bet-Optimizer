@@ -14,9 +14,9 @@ weights_url = os.environ.get("DATA")
 weights = pd.read_parquet(weights_url).values
 
 amount = st.number_input('Enter total amount for bet', min_value=0.01)
-odds_a = st.number_input('Enter odds for win', min_value=1.0)
-odds_b = st.number_input('Enter odds for draw', min_value=1.0)
-odds_c = st.number_input('Enter odds for lose', min_value=1.0)
+odds_a = st.number_input('Enter odds for win', min_value=1.01)
+odds_b = st.number_input('Enter odds for draw', min_value=1.01)
+odds_c = st.number_input('Enter odds for lose', min_value=1.01)
 
 
 score = []
