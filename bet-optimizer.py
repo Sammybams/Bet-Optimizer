@@ -48,7 +48,7 @@ if st.button("Optimize"):
 
         output = f"""
                 | Scenario | Stake | Reward |
-                |------------------|------------------|
+                |------------------|------------------| ------------------ |
                 | Win | {stake_win} | {reward_win} |
                 | Draw | {stake_draw} | {reward_draw} |
                 | Lose | {stake_lose} | {reward_lose} |
