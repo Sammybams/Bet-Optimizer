@@ -9,7 +9,7 @@ import pandas as pd
 from dotenv import load_dotenv
 load_dotenv('secrets.env')
 
-@st.cache
+@st.cache_data
 def load_data():
     weights_url = os.environ.get("DATA")
     weights = pd.read_parquet(weights_url).values
