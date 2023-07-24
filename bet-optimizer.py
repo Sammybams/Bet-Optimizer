@@ -38,15 +38,16 @@ if st.button("Optimize"):
     stake_draw = round(amount*best_score[1],3)
     stake_lose = round(amount*best_score[2],3)
 
-    if best_score <= 1:
-        st.warning('Not optimizable for lose', icon="⚠️")
+    if min(best_score) <= 1:
+        best_payout = max([stake_win, stake_draw, stake_lose])
+        st.warning(f'Not optimizable for zero loss.\nBest possible payout to avoid total loss is {best_payout}.', icon="⚠️")
 
         output = f"""
-                | Scenario | Stake |
+                | Scenario | Stake | Reward |
                 |------------------|------------------|
-                | Win | {stake_win} |
-                | Draw | {stake_draw} |
-                | Lose | {stake_lose} |
+                | Win | {stake_win} | {stake_win} |
+                | Draw | {stake_draw} | {stake_draw} |
+                | Lose | {stake_lose} | {stake_lose} |
                 """
         st.markdown(output)
 
