@@ -4,3 +4,5 @@
 pyvenv.cfg
 /experimentation/
 secrets.env
+/etc/
+/share/
