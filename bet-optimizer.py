@@ -48,5 +48,6 @@ if st.button("Optimize"):
                 | Draw | {stake_draw} |
                 | Lose | {stake_lose} |
                 """
+        st.markdown(output)
 
 
