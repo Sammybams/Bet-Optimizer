@@ -52,7 +52,7 @@ if st.button("Optimize"):
     
     if min(best_score) <= 1:
         best_payout = max([stake_win, stake_draw, stake_lose])
-        st.warning(f'Not optimizable for zero loss.\nBest possible payout to avoid total loss is {best_payout}.', icon="⚠️")
+        st.warning(f'Not optimizable for zero loss. Best possible payout to avoid total loss is {best_payout}.', icon="⚠️")
 
         st.markdown(output)
 
