@@ -47,11 +47,11 @@ if st.button("Optimize"):
         st.warning(f'Not optimizable for zero loss.\nBest possible payout to avoid total loss is {best_payout}.', icon="⚠️")
 
         output = f"""
-                | Scenario | Stake | Reward |
-                |------------------|------------------| ------------------ |
-                | Win | {stake_win} | {reward_win} |
-                | Draw | {stake_draw} | {reward_draw} |
-                | Lose | {stake_lose} | {reward_lose} |
+                | Scenario | Odds | Stake | Reward |
+                |------------------|------------------|------------------|------------------ |
+                | Win | {odds_a} |{stake_win} | {reward_win} |
+                | Draw | {odds_b} | {stake_draw} | {reward_draw} |
+                | Lose | {odds_c} | {stake_lose} | {reward_lose} |
                 """
         st.markdown(output)
 
