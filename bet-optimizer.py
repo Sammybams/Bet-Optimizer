@@ -34,12 +34,12 @@ if st.button("Optimize"):
     best_score = sorted_scores[-1][1]
     loc_best_score = weights[sorted_scores[-1][0]]
 
+    stake_win = amount*best_score[0]
+    stake_draw = amount*best_score[1]
+    stake_lose = amount*best_score[2]
+
     if best_score <= 1:
         st.warning('Not optimizable for lose', icon="⚠️")
-
-        stake_win = amount*best_score[0]
-        stake_draw = amount*best_score[1]
-        stake_lose = amount*best_score[2]
 
         output = f"""
                 | Scenario | Stake |
