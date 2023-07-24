@@ -26,10 +26,7 @@ for i, value in enumerate(weights):
     a_wa = odds_a*w_a
     b_wb = odds_b*w_b
     c_wc = odds_c*w_c
-    score_a = a_wa - (w_b + w_c)
-    score_b = b_wb - (w_a + w_c)
-    score_c = c_wc - (w_a + w_b)
-
+    
     score.append([i, [a_wa, b_wb, c_wc]])
 
 sorted_scores = sorted(score, key = lambda x: min(x[1]))
