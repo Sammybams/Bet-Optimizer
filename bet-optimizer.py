@@ -34,9 +34,9 @@ if st.button("Optimize"):
     best_score = sorted_scores[-1][1]
     loc_best_score = weights[sorted_scores[-1][0]]
 
-    stake_win = amount*best_score[0]
-    stake_draw = amount*best_score[1]
-    stake_lose = amount*best_score[2]
+    stake_win = round(amount*best_score[0],3)
+    stake_draw = round(amount*best_score[1],3)
+    stake_lose = round(amount*best_score[2],3)
 
     if best_score <= 1:
         st.warning('Not optimizable for lose', icon="⚠️")
