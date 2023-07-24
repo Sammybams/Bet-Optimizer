@@ -9,9 +9,13 @@ import pandas as pd
 from dotenv import load_dotenv
 load_dotenv('secrets.env')
 
-weights_url = os.environ.get("DATA")
+@st.cache
+def load_data():
+    weights_url = os.environ.get("DATA")
+    weights = pd.read_parquet(weights_url).values
+    return weights
 
-weights = pd.read_parquet(weights_url).values
+weights = load_data()
 
 amount = st.number_input('Enter total amount for bet', min_value=0.01)
 odds_a = st.number_input('Enter odds for win', min_value=1.01)
@@ -50,7 +54,7 @@ if st.button("Optimize"):
             | Lose | {odds_c} | {stake_lose} | {reward_lose} |
             """
     best_payout = max([reward_win, reward_draw, reward_lose])
-    
+
     if min(best_score) < 1:
         st.warning(f'Not optimizable for zero loss. Best possible payout to avoid total loss is {best_payout}.', icon="⚠️")
         st.markdown(output)
