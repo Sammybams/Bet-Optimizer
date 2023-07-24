@@ -5,7 +5,10 @@ st.title('Bet Optimizer 🎯')
 
 import os
 import numpy as np
+import pandas as pd
 from dotenv import load_dotenv
 load_dotenv('secrets.env')
 
-weights = os.environ.get("DATA")
+weights_url = os.environ.get("DATA")
+
+weights = pd.read_parquet(weights_url)
