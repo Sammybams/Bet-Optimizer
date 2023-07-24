@@ -49,11 +49,11 @@ if st.button("Optimize"):
             | Draw | {odds_b} | {stake_draw} | {reward_draw} |
             | Lose | {odds_c} | {stake_lose} | {reward_lose} |
             """
-    
+    best_payout = max([reward_win, reward_draw, reward_lose])
     if min(best_score) <= 1:
-        best_payout = max([reward_win, reward_draw, reward_lose])
         st.warning(f'Not optimizable for zero loss. Best possible payout to avoid total loss is {best_payout}.', icon="⚠️")
-
         st.markdown(output)
 
-
+    else:
+        st.success(f'Betting portfolio optimized. Best payout is {best_payout}.', icon="✅")
+        st.markdown(output)
