@@ -142,14 +142,11 @@ if st.button("Optimize"):
         for i in range(6):
             no_opt_stake_wins.append(round(amount*weights_cases[i][0],3))
             no_opt_stake_draw.append(round(amount*weights_cases[i][1],3))
-            no_opt_reward_lose.append(round(amount*weights_cases[i][2],3))
+            no_opt_stake_lose.append(round(amount*weights_cases[i][2],3))
 
             no_opt_reward_wins.append(round(amount*cases[i][0],3))
             no_opt_reward_draw.append(round(amount*cases[i][1],3))
             no_opt_reward_lose.append(round(amount*cases[i][2],3))
-
-
-
 
         # tab1.subheader("Countries with most number of crimes recorded")
         tab1.markdown(opt_details(no_opt_stake_wins[0], no_opt_stake_draw[0], no_opt_stake_lose[0],
