@@ -114,17 +114,23 @@ if st.button("Optimize"):
                 break
 
         st.subheader("Alternative Strategies to Diversify Portfolio")
-        case1 = [(1 - round(min(cases[0]), 3))*100, (round(max(cases[0]), 3) - 1)*100]
-        case2 = [(1 - round(min(cases[1]), 3))*100, (round(max(cases[1]), 3) - 1)*100]
-        case3 = [(1 - round(min(cases[2]), 3))*100, (round(max(cases[2]), 3) - 1)*100]
-        case4 = [(1 - round(min(cases[3]), 3))*100, (round(max(cases[3]), 3) - 1)*100]
-        case5 = [(1 - round(min(cases[4]), 3))*100, (round(max(cases[4]), 3) - 1)*100]
-        case6 = [(1 - round(min(cases[5]), 3))*100, (round(max(cases[5]), 3) - 1)*100]
+        # case1 = [(1 - round(min(cases[0]), 3))*100, (round(max(cases[0]), 3) - 1)*100]
+        # case2 = [(1 - round(min(cases[1]), 3))*100, (round(max(cases[1]), 3) - 1)*100]
+        # case3 = [(1 - round(min(cases[2]), 3))*100, (round(max(cases[2]), 3) - 1)*100]
+        # case4 = [(1 - round(min(cases[3]), 3))*100, (round(max(cases[3]), 3) - 1)*100]
+        # case5 = [(1 - round(min(cases[4]), 3))*100, (round(max(cases[4]), 3) - 1)*100]
+        # case6 = [(1 - round(min(cases[5]), 3))*100, (round(max(cases[5]), 3) - 1)*100]
 
+        case1 = [round(((1-min(cases[0]))*100), 2), round(((max(cases[0])-1)*100), 2)]
+        case2 = [round(((1-min(cases[1]))*100), 2), round(((max(cases[1])-1)*100), 2)]
+        case3 = [round(((1-min(cases[2]))*100), 2), round(((max(cases[2])-1)*100), 2)]
+        case4 = [round(((1-min(cases[3]))*100), 2), round(((max(cases[3])-1)*100), 2)]
+        case5 = [round(((1-min(cases[4]))*100), 2), round(((max(cases[4])-1)*100), 2)]
+        case6 = [round(((1-min(cases[5]))*100), 2), round(((max(cases[5])-1)*100), 2)]
         
         tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([f"{case1[0]}% Loss | {case1[1]}% Profit", f"{case2[0]}% Loss | {case2[1]}% Profit",
-                                                f"{case3[0]}% Loss | {case3[1]}% Profit", f"{case4[0]}% Loss | {case4[1]}% Profit",
-                                                f"{case5[0]}% Loss | {case5[1]}% Profit", f"{case6[0]}% Loss | {case6[1]}% Profit"])
+                                                      f"{case3[0]}% Loss | {case3[1]}% Profit", f"{case4[0]}% Loss | {case4[1]}% Profit",
+                                                      f"{case5[0]}% Loss | {case5[1]}% Profit", f"{case6[0]}% Loss | {case6[1]}% Profit"])
 
         no_opt_stake_wins = []
         no_opt_stake_draw = []
@@ -136,7 +142,7 @@ if st.button("Optimize"):
         for i in range(6):
             no_opt_stake_wins.append(round(amount*weights_cases[i][0],3))
             no_opt_stake_draw.append(round(amount*weights_cases[i][1],3))
-            no_opt_stake_lose.append(round(amount*weights_cases[i][2],3))
+            no_opt_reward_lose.append(round(amount*weights_cases[i][2],3))
 
             no_opt_reward_wins.append(round(amount*cases[i][0],3))
             no_opt_reward_draw.append(round(amount*cases[i][1],3))
