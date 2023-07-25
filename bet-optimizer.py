@@ -72,7 +72,7 @@ if st.button("Optimize"):
     min_payout = min([reward_win, reward_draw, reward_lose])
 
     if min(best_score) < 1:
-        st.warning(f'Not optimizable for zero loss. Best possible payout to avoid total loss is {best_payout}.', icon="⚠️")
+        st.warning(f'Not optimizable for zero loss.', icon="⚠️")
         cases = []
         weights_cases = []
         size = len(sorted_scores)
