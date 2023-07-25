@@ -69,3 +69,6 @@ if st.button("Optimize"):
         st.success(f'Betting portfolio optimized. Best possible payout is {best_payout}.', icon="✅")
         st.markdown(output)
         st.markdown(f'#### Guranteed minimum payout is {min_payout}.')
+
+st.divider()
+st.markdown("Built by [Samuel Bamgbola](https://www.linkedin.com/in/samuel-bamgbola-29baa91a3/).", unsafe_allow_html=True)
