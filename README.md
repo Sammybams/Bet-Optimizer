@@ -14,7 +14,7 @@ The Bet Optimizer App is a powerful tool designed to help users diversify their 
 The Bet Optimizer App works by taking user-inputted odds for each outcome scenario (win, draw, lose) and then analyzing the potential portfolio divisions. It employs statistical calculations, including permutation, to compute weights for each division, ensuring a balanced distribution. The app aims to find the best portfolio division that guarantees a payout for the user.
 
 - ### Optimizable Bets:
-An optimizable bet is one which can guarantee a profit on total stake. It is often characterized by scenarios where the odds for an opponent winning are significantly higher than its competitors. For example, in a scenario where the odds are: opponent wins (1.5), draw (5), and opponent loses (40), the app can find a portfolio division that guarantees a minimum of 12% profit on the bet.
+An optimizable bet is one which can guarantee a profit on total stake. It is often characterized by scenarios where the odds of an opponent winning are significantly higher than its competitors. For example, in a scenario where the odds are: opponent wins (1.5), draw (5), and opponent loses (40), the app can find a portfolio division that guarantees a minimum of 12% profit on the bet.
 
 
 - ### Non-optimizable Bets:
@@ -24,4 +24,4 @@ In cases where the odds do not allow for guaranteed profits through portfolio di
 The Bet Optimizer App is licensed under the [MIT License](/LICENSE).
 
 ## Disclaimer
-This app provides a tool for bet portfolio optimization based on user-inputted odds. However, gambling and betting involve risk. While the app's performance may guarantee profits for optimizable bets, postponment of games and other unpredictable circumstances could occur. Users should exercise caution and gamble responsibly. The app is intended for informational purposes only.
+This app provides a tool for bet portfolio optimization based on user-inputted odds. However, gambling and betting involve risk. While the app's performance may guarantee profits for optimizable bets, postponement of games and other unpredictable circumstances could occur. Users should exercise caution and gamble responsibly. The app is intended for informational purposes only.
