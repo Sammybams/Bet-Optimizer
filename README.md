@@ -21,7 +21,7 @@ An optimizable bet is one which can guarantee a profit on total stake. It is oft
 In cases where the odds do not allow for guaranteed profits through portfolio division, the app will inform the user that the bet is not optimizable. However, it will provide alternative strategies to diversify the portfolio, reducing the risk of total loss.
 
 ## License
-The Bet Optimizer App is licensed under the MIT License.
+The Bet Optimizer App is licensed under the [MIT License](/LICENSE).
 
 ## Disclaimer
 This app provides a tool for bet portfolio optimization based on user-inputted odds. However, gambling and betting involve risk. While the app's performance may guarantee profits for optimizable bets, postponment of games and other unpredictable circumstances could occur. Users should exercise caution and gamble responsibly. The app is intended for informational purposes only.
