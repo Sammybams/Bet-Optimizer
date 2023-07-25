@@ -1,4 +1,4 @@
-# Bet-Optimizer
+# Bet-Optimizer-App
 
 ## Overview
 
