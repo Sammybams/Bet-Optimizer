@@ -66,5 +66,6 @@ if st.button("Optimize"):
         st.markdown(output)
 
     else:
-        st.success(f'Betting portfolio optimized. Guranteed minimum payout is {min_payout}. Best payout is {best_payout}.', icon="✅")
+        st.success(f'Betting portfolio optimized. Best possible payout is {best_payout}.', icon="✅")
         st.markdown(output)
+        st.markdown(f'#### Guranteed minimum payout is {min_payout}.')
