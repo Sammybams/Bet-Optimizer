@@ -114,13 +114,7 @@ if st.button("Optimize"):
                 break
 
         st.subheader("Alternative Strategies to Diversify Portfolio")
-        # case1 = [(1 - round(min(cases[0]), 3))*100, (round(max(cases[0]), 3) - 1)*100]
-        # case2 = [(1 - round(min(cases[1]), 3))*100, (round(max(cases[1]), 3) - 1)*100]
-        # case3 = [(1 - round(min(cases[2]), 3))*100, (round(max(cases[2]), 3) - 1)*100]
-        # case4 = [(1 - round(min(cases[3]), 3))*100, (round(max(cases[3]), 3) - 1)*100]
-        # case5 = [(1 - round(min(cases[4]), 3))*100, (round(max(cases[4]), 3) - 1)*100]
-        # case6 = [(1 - round(min(cases[5]), 3))*100, (round(max(cases[5]), 3) - 1)*100]
-
+        
         case1 = [round(((1-min(cases[0]))*100), 2), round(((max(cases[0])-1)*100), 2)]
         case2 = [round(((1-min(cases[1]))*100), 2), round(((max(cases[1])-1)*100), 2)]
         case3 = [round(((1-min(cases[2]))*100), 2), round(((max(cases[2])-1)*100), 2)]
