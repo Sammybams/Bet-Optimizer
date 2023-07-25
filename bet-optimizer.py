@@ -74,33 +74,42 @@ if st.button("Optimize"):
     if min(best_score) < 1:
         st.warning(f'Not optimizable for zero loss. Best possible payout to avoid total loss is {best_payout}.', icon="⚠️")
         cases = []
+        weights_cases = []
         size = len(sorted_scores)
+
         for i in range(1,size):
             if max(sorted_scores[-i][1])>1.05:
                 cases.append(sorted_scores[-i][1])
+                weights_cases.append(weights[sorted_scores[-i][0]])
                 break
-        for i in range(1,488188):
+
+        for i in range(1,size):
             if max(sorted_scores[-i][1])>1.1:
                 cases.append(sorted_scores[-i][1])
+                weights_cases.append(weights[sorted_scores[-i][0]])
                 break
 
-        for i in range(1,488188):
+        for i in range(1,size):
             if max(sorted_scores[-i][1])>1.2:
                 cases.append(sorted_scores[-i][1])
+                weights_cases.append(weights[sorted_scores[-i][0]])
                 break
 
-        for i in range(1,488188):
+        for i in range(1,size):
             if max(sorted_scores[-i][1])>1.3:
                 cases.append(sorted_scores[-i][1])
+                weights_cases.append(weights[sorted_scores[-i][0]])
                 break
-        for i in range(1,488188):
+
+        for i in range(1,size):
             if max(sorted_scores[-i][1])>1.4:
-                cases.append(sorted_scores[-i][1])
+                weights_cases.append(weights[sorted_scores[-i][0]])
                 break
             
-        for i in range(1,488188):
+        for i in range(1,size):
             if max(sorted_scores[-i][1])>1.5:
                 cases.append(sorted_scores[-i][1])
+                weights_cases.append(weights[sorted_scores[-i][0]])
                 break
 
         st.subheader("Alternative Strategies to Diversify Portfolio")
@@ -123,7 +132,7 @@ if st.button("Optimize"):
         reward_win = round(amount*best_score[0],3)
         reward_draw = round(amount*best_score[1],3)
         reward_lose = round(amount*best_score[2],3)
-        
+
         no_opt_stake_wins = []
         no_opt_stake_draw = []
         no_opt_stake_lose = []
@@ -131,30 +140,43 @@ if st.button("Optimize"):
         no_opt_reward_wins = []
         no_opt_reward_draw = []
         no_opt_reward_lose = []
-        for i in range(len(cases)):
-            no_opt_stake_wins.append()
+        for i in range(6):
+            no_opt_stake_wins.append(round(amount*weights_cases[i][0],3))
+            no_opt_stake_wins.append(round(amount*weights_cases[i][1],3))
+            no_opt_stake_wins.append(round(amount*weights_cases[i][2],3))
+
+            no_opt_reward_wins.append(round(amount*cases[i][0],3))
+            no_opt_reward_draw.append(round(amount*cases[i][1],3))
+            no_opt_reward_lose.append(round(amount*cases[i][2],3))
 
 
 
 
         # tab1.subheader("Countries with most number of crimes recorded")
-        tab1.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
+        tab1.markdown(opt_details(no_opt_stake_wins[0], no_opt_stake_draw[0], no_opt_stake_lose[0],
+                                  no_opt_reward_wins[0], no_opt_reward_draw[0], no_opt_reward_lose[0]))
 
         # tab2.subheader("Countries with least number of crimes recorded")
-        tab2.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
+        tab2.markdown(opt_details(no_opt_stake_wins[1], no_opt_stake_draw[1], no_opt_stake_lose[1],
+                                  no_opt_reward_wins[1], no_opt_reward_draw[1], no_opt_reward_lose[1]))
 
         # tab3.subheader("Top 5 Countries with most number of fatalities recorded")
-        tab3.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
+        tab3.markdown(opt_details(no_opt_stake_wins[2], no_opt_stake_draw[2], no_opt_stake_lose[2],
+                                  no_opt_reward_wins[2], no_opt_reward_draw[2], no_opt_reward_lose[2]))
 
         # tab4.subheader("Total Record of Fatalities Per Region")
-        tab4.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
-
+        tab4.markdown(opt_details(no_opt_stake_wins[3], no_opt_stake_draw[3], no_opt_stake_lose[3],
+                                  no_opt_reward_wins[3], no_opt_reward_draw[3], no_opt_reward_lose[3]))
+        
         # tab5.subheader("Top 5 Countries with most number of fatalities recorded")
-        tab5.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
+        tab5.markdown(opt_details(no_opt_stake_wins[4], no_opt_stake_draw[4], no_opt_stake_lose[4],
+                                  no_opt_reward_wins[4], no_opt_reward_draw[4], no_opt_reward_lose[4]))
 
         # tab6.subheader("Total Record of Fatalities Per Region")
-        tab6.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
-        st.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
+        tab6.markdown(opt_details(no_opt_stake_wins[5], no_opt_stake_draw[5], no_opt_stake_lose[5],
+                                  no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]))
+
+        # st.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
 
     else:
         st.success(f'Betting portfolio optimized. Best possible payout is {best_payout}.', icon="✅")
