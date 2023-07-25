@@ -61,13 +61,6 @@ if st.button("Optimize"):
     reward_draw = round(amount*best_score[1],3)
     reward_lose = round(amount*best_score[2],3)
 
-    output = f"""
-            | Scenario | Odds | Stake | Reward |
-            |------------------|------------------|------------------|------------------|
-            | Win 🏅 | {odds_a} |{stake_win} | {reward_win} |
-            | Draw 🤝 | {odds_b} | {stake_draw} | {reward_draw} |
-            | Lose 👎 | {odds_c} | {stake_lose} | {reward_lose} |
-            """
     best_payout = max([reward_win, reward_draw, reward_lose])
     min_payout = min([reward_win, reward_draw, reward_lose])
 
@@ -145,43 +138,44 @@ if st.button("Optimize"):
         # 5% profit
         tab1.markdown(opt_details(no_opt_stake_wins[0], no_opt_stake_draw[0], no_opt_stake_lose[0],
                                   no_opt_reward_wins[0], no_opt_reward_draw[0], no_opt_reward_lose[0]))
-        tab1.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[0], no_opt_reward_draw[0], no_opt_reward_lose[0]])}.')
-        tab1.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[0], no_opt_reward_draw[0], no_opt_reward_lose[0]])}.')
+        tab1.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[0], no_opt_reward_draw[0], no_opt_reward_lose[0]])}.')
+        tab1.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[0], no_opt_reward_draw[0], no_opt_reward_lose[0]])}.')
 
         # 10% profit
         tab2.markdown(opt_details(no_opt_stake_wins[1], no_opt_stake_draw[1], no_opt_stake_lose[1],
                                   no_opt_reward_wins[1], no_opt_reward_draw[1], no_opt_reward_lose[1]))
-        tab2.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[1], no_opt_reward_draw[1], no_opt_reward_lose[1]])}.')
-        tab2.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[1], no_opt_reward_draw[1], no_opt_reward_lose[1]])}.')
+        tab2.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[1], no_opt_reward_draw[1], no_opt_reward_lose[1]])}.')
+        tab2.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[1], no_opt_reward_draw[1], no_opt_reward_lose[1]])}.')
         
          # 20% profit
         tab3.markdown(opt_details(no_opt_stake_wins[2], no_opt_stake_draw[2], no_opt_stake_lose[2],
                                   no_opt_reward_wins[2], no_opt_reward_draw[2], no_opt_reward_lose[2]))
-        tab3.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[2], no_opt_reward_draw[2], no_opt_reward_lose[2]])}.')
-        tab3.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[2], no_opt_reward_draw[2], no_opt_reward_lose[2]])}.')
+        tab3.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[2], no_opt_reward_draw[2], no_opt_reward_lose[2]])}.')
+        tab3.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[2], no_opt_reward_draw[2], no_opt_reward_lose[2]])}.')
 
          # 30% profit
         tab4.markdown(opt_details(no_opt_stake_wins[3], no_opt_stake_draw[3], no_opt_stake_lose[3],
                                   no_opt_reward_wins[3], no_opt_reward_draw[3], no_opt_reward_lose[3]))
-        tab4.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[3], no_opt_reward_draw[3], no_opt_reward_lose[3]])}.')
-        tab4.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[3], no_opt_reward_draw[3], no_opt_reward_lose[3]])}.')
+        tab4.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[3], no_opt_reward_draw[3], no_opt_reward_lose[3]])}.')
+        tab4.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[3], no_opt_reward_draw[3], no_opt_reward_lose[3]])}.')
         
          # 40% profit
         tab5.markdown(opt_details(no_opt_stake_wins[4], no_opt_stake_draw[4], no_opt_stake_lose[4],
                                   no_opt_reward_wins[4], no_opt_reward_draw[4], no_opt_reward_lose[4]))
-        tab5.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[4], no_opt_reward_draw[4], no_opt_reward_lose[5]])}.')
-        tab5.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[4], no_opt_reward_draw[4], no_opt_reward_lose[5]])}.')
+        tab5.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[4], no_opt_reward_draw[4], no_opt_reward_lose[5]])}.')
+        tab5.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[4], no_opt_reward_draw[4], no_opt_reward_lose[5]])}.')
 
          # 50% profit
         tab6.markdown(opt_details(no_opt_stake_wins[5], no_opt_stake_draw[5], no_opt_stake_lose[5],
                                   no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]))
-        tab6.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]])}.')
-        tab6.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]])}.')
+        tab6.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]])}.')
+        tab6.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]])}.')
 
     else:
         st.success(f'Betting portfolio optimized. Best possible payout is {best_payout}.', icon="✅")
         st.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
-        st.markdown(f'#### Guranteed minimum payout is {min_payout}.')
+        st.markdown("")
+        st.markdown(f'##### Guranteed minimum payout is {min_payout}.')
 
     # coming soon charts.
     # grouping = np.array(sorted_scores)[:,1].T
@@ -190,7 +184,7 @@ if st.button("Optimize"):
     # plot_data['Draw'] = grouping[1]
     # plot_data['Lose'] = grouping[2]
 
-    st.line_chart(plot_data, x=plot_data.index, y='Normalized Payout')
+    # st.line_chart(plot_data, x=plot_data.index, y='Normalized Payout')
 
 st.divider()
 st.markdown("Built by [Samuel Bamgbola](https://www.linkedin.com/in/samuel-bamgbola-29baa91a3/).", unsafe_allow_html=True)
