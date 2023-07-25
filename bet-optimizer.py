@@ -135,8 +135,8 @@ if st.button("Optimize"):
         no_opt_reward_lose = []
         for i in range(6):
             no_opt_stake_wins.append(round(amount*weights_cases[i][0],3))
-            no_opt_stake_wins.append(round(amount*weights_cases[i][1],3))
-            no_opt_stake_wins.append(round(amount*weights_cases[i][2],3))
+            no_opt_stake_draw.append(round(amount*weights_cases[i][1],3))
+            no_opt_stake_lose.append(round(amount*weights_cases[i][2],3))
 
             no_opt_reward_wins.append(round(amount*cases[i][0],3))
             no_opt_reward_draw.append(round(amount*cases[i][1],3))
