@@ -103,6 +103,7 @@ if st.button("Optimize"):
 
         for i in range(1,size):
             if max(sorted_scores[-i][1])>1.4:
+                cases.append(sorted_scores[-i][1])
                 weights_cases.append(weights[sorted_scores[-i][0]])
                 break
             
