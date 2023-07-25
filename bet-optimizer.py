@@ -142,29 +142,35 @@ if st.button("Optimize"):
             no_opt_reward_draw.append(round(amount*cases[i][1],3))
             no_opt_reward_lose.append(round(amount*cases[i][2],3))
 
-        # tab1.subheader("Countries with most number of crimes recorded")
         tab1.markdown(opt_details(no_opt_stake_wins[0], no_opt_stake_draw[0], no_opt_stake_lose[0],
                                   no_opt_reward_wins[0], no_opt_reward_draw[0], no_opt_reward_lose[0]))
+        tab1.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[0], no_opt_reward_draw[0], no_opt_reward_lose[0]])}.')
+        tab1.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[0], no_opt_reward_draw[0], no_opt_reward_lose[0]])}.')
 
-        # tab2.subheader("Countries with least number of crimes recorded")
         tab2.markdown(opt_details(no_opt_stake_wins[1], no_opt_stake_draw[1], no_opt_stake_lose[1],
                                   no_opt_reward_wins[1], no_opt_reward_draw[1], no_opt_reward_lose[1]))
+        tab2.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[1], no_opt_reward_draw[1], no_opt_reward_lose[1]])}.')
+        tab2.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[1], no_opt_reward_draw[1], no_opt_reward_lose[1]])}.')
 
-        # tab3.subheader("Top 5 Countries with most number of fatalities recorded")
         tab3.markdown(opt_details(no_opt_stake_wins[2], no_opt_stake_draw[2], no_opt_stake_lose[2],
                                   no_opt_reward_wins[2], no_opt_reward_draw[2], no_opt_reward_lose[2]))
+        tab3.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[2], no_opt_reward_draw[2], no_opt_reward_lose[2]])}.')
+        tab3.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[2], no_opt_reward_draw[2], no_opt_reward_lose[2]])}.')
 
-        # tab4.subheader("Total Record of Fatalities Per Region")
         tab4.markdown(opt_details(no_opt_stake_wins[3], no_opt_stake_draw[3], no_opt_stake_lose[3],
                                   no_opt_reward_wins[3], no_opt_reward_draw[3], no_opt_reward_lose[3]))
+        tab4.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[3], no_opt_reward_draw[3], no_opt_reward_lose[3]])}.')
+        tab4.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[3], no_opt_reward_draw[3], no_opt_reward_lose[3]])}.')
         
-        # tab5.subheader("Top 5 Countries with most number of fatalities recorded")
         tab5.markdown(opt_details(no_opt_stake_wins[4], no_opt_stake_draw[4], no_opt_stake_lose[4],
                                   no_opt_reward_wins[4], no_opt_reward_draw[4], no_opt_reward_lose[4]))
+        tab5.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[4], no_opt_reward_draw[4], no_opt_reward_lose[5]])}.')
+        tab5.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[4], no_opt_reward_draw[4], no_opt_reward_lose[5]])}.')
 
-        # tab6.subheader("Total Record of Fatalities Per Region")
         tab6.markdown(opt_details(no_opt_stake_wins[5], no_opt_stake_draw[5], no_opt_stake_lose[5],
                                   no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]))
+        tab6.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]])}.')
+        tab6.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]])}.')
 
         # st.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
 
