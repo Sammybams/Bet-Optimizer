@@ -125,14 +125,6 @@ if st.button("Optimize"):
                                                 f"{case3[0]}% Loss | {case3[1]}% Profit", f"{case4[0]}% Loss | {case4[1]}% Profit",
                                                 f"{case5[0]}% Loss | {case5[1]}% Profit", f"{case6[0]}% Loss | {case6[1]}% Profit"])
 
-        stake_win = round(amount*weights_best_score[0],3)
-        stake_draw = round(amount*weights_best_score[1],3)
-        stake_lose = round(amount*weights_best_score[2],3)
-
-        reward_win = round(amount*best_score[0],3)
-        reward_draw = round(amount*best_score[1],3)
-        reward_lose = round(amount*best_score[2],3)
-
         no_opt_stake_wins = []
         no_opt_stake_draw = []
         no_opt_stake_lose = []
