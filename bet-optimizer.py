@@ -178,12 +178,19 @@ if st.button("Optimize"):
         tab6.markdown(f'#### Best possible payout is {max([no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]])}.')
         tab6.markdown(f'#### Worst possible payout is {min([no_opt_reward_wins[5], no_opt_reward_draw[5], no_opt_reward_lose[5]])}.')
 
-        # st.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
-
     else:
         st.success(f'Betting portfolio optimized. Best possible payout is {best_payout}.', icon="✅")
         st.markdown(opt_details(stake_win, stake_draw, stake_lose, reward_win, reward_draw, reward_lose))
         st.markdown(f'#### Guranteed minimum payout is {min_payout}.')
+
+    # coming soon charts.
+    # grouping = np.array(sorted_scores)[:,1].T
+    # plot_data = pd.DataFrame(columns=['Win', 'Draw', 'Lose'])
+    # plot_data['Win'] = grouping[0]
+    # plot_data['Draw'] = grouping[1]
+    # plot_data['Lose'] = grouping[2]
+
+    st.line_chart(plot_data, x=plot_data.index, y='Normalized Payout')
 
 st.divider()
 st.markdown("Built by [Samuel Bamgbola](https://www.linkedin.com/in/samuel-bamgbola-29baa91a3/).", unsafe_allow_html=True)
