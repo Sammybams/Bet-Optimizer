@@ -6,3 +6,4 @@ pyvenv.cfg
 secrets.env
 /etc/
 /share/
+/.streamlit/

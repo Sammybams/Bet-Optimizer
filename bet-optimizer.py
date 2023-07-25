@@ -11,9 +11,14 @@ load_dotenv('secrets.env')
 
 @st.cache_data
 def load_data():
-    weights_url = os.environ.get("DATA")
+    # weights_url = os.environ.get("DATA")
+    weights_url = st.secrets.bet_weights.URL
     weights = pd.read_parquet(weights_url).values
     return weights
+
+# from st_files_connection import FilesConnection
+# conn = st.experimental_connection('bet_weights', type=FilesConnection)
+# weights = conn.read(st.secrets.bet_weights.url, input_format='parquet').values
 
 weights = load_data()
 
