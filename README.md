@@ -25,3 +25,6 @@ The Bet Optimizer App is licensed under the [MIT License](/LICENSE).
 
 ## Disclaimer
 This app provides a tool for bet portfolio optimization based on user-inputted odds. However, gambling and betting involve risk. While the app's performance may guarantee profits for optimizable bets, postponement of games and other unpredictable circumstances could occur. Users should exercise caution and gamble responsibly. The app is intended for informational purposes only.
+
+## Demo of Video Project
+[Demo.webm](https://github.com/Sammybams/Bet-Optimizer/assets/64220829/58bedb2a-d007-4676-a189-2d22b86fe036)
