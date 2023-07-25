@@ -15,3 +15,13 @@ The Bet Optimizer App works by taking user-inputted odds for each outcome scenar
 
 ### Optimizable Bets:
 An optimizable bet is one which can guarantee a profit on total stake. It is often characterized by scenarios where the odds for an opponent winning are significantly higher than its competitors. For example, in a scenario where the odds are: opponent wins (1.5), draw (5), and opponent loses (40), the app can find a portfolio division that guarantees a minimum of 12% profit on the bet.
+
+
+### Non-optimizable Bets:
+In cases where the odds do not allow for guaranteed profits through portfolio division, the app will inform the user that the bet is not optimizable. However, it will provide alternative strategies to diversify the portfolio, reducing the risk of total loss.
+
+## License
+The Bet Optimizer App is licensed under the MIT License.
+
+## Disclaimer
+This app provides a tool for bet portfolio optimization based on user-inputted odds. However, gambling and betting involve risk. While the app's performance may guarantee profits for optimizable bets, postponment of games and other unpredictable circumstances could occur. Users should exercise caution and gamble responsibly. The app is intended for informational purposes only.
