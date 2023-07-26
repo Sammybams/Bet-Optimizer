@@ -3,7 +3,7 @@ st.set_page_config(page_title="Bet Optimizer App", page_icon="🎯")
 
 st.title('Bet Optimizer 🎯')
 
-import os
+# import os
 import numpy as np
 import pandas as pd
 from dotenv import load_dotenv
