@@ -16,14 +16,14 @@ def load_double_chance_weights():
 weights = load_double_chance_weights()
 
 amount = st.number_input('Enter total amount for bet', min_value=0.01)
-odds_a = st.number_input('Enter odds for Single chance (Win|Lose|Draw)', min_value=1.01)
+odds_a = st.number_input('Enter odds for Single chance (Win | Lose | Draw)', min_value=1.01)
 odds_b = st.number_input('Enter odds for Double chance (Win or Draw | Lose or Draw | Win or Lose)', min_value=1.01)
 
 def opt_details(stake_single, stake_double, reward_single, reward_double, odds_a=odds_a, odds_b=odds_b):
     output = f"""
             | Scenario | Odds | Stake | Reward |
             |------------------|------------------|------------------|------------------|
-            | Single | {odds_a} |{stake_single} | {reward_single} |
+            | Single | {odds_a} | {stake_single} | {reward_single} |
             | Double-chance | {odds_b} | {stake_double} | {reward_double} |
             """
     return output
