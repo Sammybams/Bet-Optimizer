@@ -4,7 +4,7 @@ st.set_page_config(page_title="Bet Optimizer App", page_icon="🎯")
 st.title('Bet Optimizer 🎯')
 
 # import os
-import numpy as np
+# import numpy as np
 import pandas as pd
 from dotenv import load_dotenv
 load_dotenv('secrets.env')
@@ -12,7 +12,7 @@ load_dotenv('secrets.env')
 @st.cache_data
 def load_weights():
     # weights_url = os.environ.get("DATA")
-    weights_url = st.secrets.bet_weights.URL
+    weights_url = st.secrets.bet_weights.WEIGHTS_URL
     weights = pd.read_parquet(weights_url).values
     return weights
 
