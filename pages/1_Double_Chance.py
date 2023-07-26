@@ -44,14 +44,14 @@ if st.button("Optimize"):
         weights_best_score = weights[sorted_scores[-1][0]]
         best_score = sorted_scores[-1][1]
 
-        stake_win = round(amount*weights_best_score[0],3)
-        stake_draw = round(amount*weights_best_score[1],3)
+        stake_single = round(amount*weights_best_score[0],3)
+        stake_double = round(amount*weights_best_score[1],3)
 
-        reward_win = round(amount*best_score[0],3)
-        reward_draw = round(amount*best_score[1],3)
+        reward_single = round(amount*best_score[0],3)
+        reward_double = round(amount*best_score[1],3)
 
-        best_payout = max([reward_win, reward_draw])
-        min_payout = min([reward_win, reward_draw])
+        best_payout = max([reward_single, reward_double])
+        min_payout = min([reward_single, reward_double])
 
         if min(best_score) < 1:
             st.warning(f'Not optimizable for zero loss.', icon="⚠️")
@@ -108,63 +108,63 @@ if st.button("Optimize"):
                                                         f"{case3[0]}% Loss | {case3[1]}% Profit", f"{case4[0]}% Loss | {case4[1]}% Profit",
                                                         f"{case5[0]}% Loss | {case5[1]}% Profit", f"{case6[0]}% Loss | {case6[1]}% Profit"])
 
-            no_opt_stake_wins = []
-            no_opt_stake_draw = []
+            no_opt_stake_single = []
+            no_opt_stake_double = []
 
-            no_opt_reward_wins = []
-            no_opt_reward_draw = []
+            no_opt_reward_single = []
+            no_opt_reward_double = []
             for i in range(6):
-                no_opt_stake_wins.append(round(amount*weights_cases[i][0],3))
-                no_opt_stake_draw.append(round(amount*weights_cases[i][1],3))
+                no_opt_stake_single.append(round(amount*weights_cases[i][0],3))
+                no_opt_stake_double.append(round(amount*weights_cases[i][1],3))
 
-                no_opt_reward_wins.append(round(amount*cases[i][0],3))
-                no_opt_reward_draw.append(round(amount*cases[i][1],3))
+                no_opt_reward_single.append(round(amount*cases[i][0],3))
+                no_opt_reward_double.append(round(amount*cases[i][1],3))
 
             # 5% profit
-            tab1.markdown(opt_details(no_opt_stake_wins[0], no_opt_stake_draw[0],
-                                      no_opt_reward_wins[0], no_opt_reward_draw[0]))
+            tab1.markdown(opt_details(no_opt_stake_single[0], no_opt_stake_double[0],
+                                      no_opt_reward_single[0], no_opt_reward_double[0]))
             tab1.markdown("")
-            tab1.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[0], no_opt_reward_draw[0]])}.')
-            tab1.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[0], no_opt_reward_draw[0]])}.')
+            tab1.markdown(f'##### Best possible payout is {max([no_opt_stake_single[0], no_opt_stake_double[0]])}.')
+            tab1.markdown(f'##### Worst possible payout is {min([no_opt_reward_single[0], no_opt_reward_double[0]])}.')
 
             # 10% profit
-            tab2.markdown(opt_details(no_opt_stake_wins[1], no_opt_stake_draw[1],
-                                      no_opt_reward_wins[1], no_opt_reward_draw[1],))
+            tab2.markdown(opt_details(no_opt_stake_single[1], no_opt_stake_double[1],
+                                      no_opt_reward_single[1], no_opt_reward_double[1],))
             tab2.markdown("")
-            tab2.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[1], no_opt_reward_draw[1]])}.')
-            tab2.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[1], no_opt_reward_draw[1]])}.')
+            tab2.markdown(f'##### Best possible payout is {max([no_opt_stake_single[1], no_opt_stake_double[1]])}.')
+            tab2.markdown(f'##### Worst possible payout is {min([no_opt_reward_single[1], no_opt_reward_double[1]])}.')
             
             # 20% profit
-            tab3.markdown(opt_details(no_opt_stake_wins[2], no_opt_stake_draw[2],
-                                      no_opt_reward_wins[2], no_opt_reward_draw[2],))
+            tab3.markdown(opt_details(no_opt_stake_single[2], no_opt_stake_double[2],
+                                      no_opt_reward_single[2], no_opt_reward_double[2],))
             tab3.markdown("")
-            tab3.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[2], no_opt_reward_draw[2],])}.')
-            tab3.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[2], no_opt_reward_draw[2]])}.')
+            tab3.markdown(f'##### Best possible payout is {max([no_opt_stake_single[2], no_opt_stake_double[2],])}.')
+            tab3.markdown(f'##### Worst possible payout is {min([no_opt_reward_single[2], no_opt_reward_double[2]])}.')
 
             # 30% profit
-            tab4.markdown(opt_details(no_opt_stake_wins[3], no_opt_stake_draw[3],
-                                      no_opt_reward_wins[3], no_opt_reward_draw[3],))
+            tab4.markdown(opt_details(no_opt_stake_single[3], no_opt_stake_double[3],
+                                      no_opt_reward_single[3], no_opt_reward_double[3],))
             tab4.markdown("")
-            tab4.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[3], no_opt_reward_draw[3]])}.')
-            tab4.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[3], no_opt_reward_draw[3]])}.')
+            tab4.markdown(f'##### Best possible payout is {max([no_opt_stake_single[3], no_opt_stake_double[3]])}.')
+            tab4.markdown(f'##### Worst possible payout is {min([no_opt_reward_single[3], no_opt_reward_double[3]])}.')
             
             # 40% profit
-            tab5.markdown(opt_details(no_opt_stake_wins[4], no_opt_stake_draw[4],
-                                      no_opt_reward_wins[4], no_opt_reward_draw[4]))
+            tab5.markdown(opt_details(no_opt_stake_single[4], no_opt_stake_double[4],
+                                      no_opt_reward_single[4], no_opt_reward_double[4]))
             tab5.markdown("")
-            tab5.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[4], no_opt_reward_draw[4]])}.')
-            tab5.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[4], no_opt_reward_draw[4]])}.')
+            tab5.markdown(f'##### Best possible payout is {max([no_opt_stake_single[4], no_opt_stake_double[4]])}.')
+            tab5.markdown(f'##### Worst possible payout is {min([no_opt_reward_single[4], no_opt_reward_double[4]])}.')
 
             # 50% profit
-            tab6.markdown(opt_details(no_opt_stake_wins[5], no_opt_stake_draw[5],
-                                      no_opt_reward_wins[5], no_opt_reward_draw[5]))
+            tab6.markdown(opt_details(no_opt_stake_single[5], no_opt_stake_double[5],
+                                      no_opt_reward_single[5], no_opt_reward_double[5]))
             tab6.markdown("")
-            tab6.markdown(f'##### Best possible payout is {max([no_opt_reward_wins[5], no_opt_reward_draw[5]])}.')
-            tab6.markdown(f'##### Worst possible payout is {min([no_opt_reward_wins[5], no_opt_reward_draw[5]])}.')
+            tab6.markdown(f'##### Best possible payout is {max([no_opt_stake_single[5], no_opt_stake_double[5]])}.')
+            tab6.markdown(f'##### Worst possible payout is {min([no_opt_reward_single[5], no_opt_reward_double[5]])}.')
 
         else:
             st.success(f'Betting portfolio optimized. Best possible payout is {best_payout}.', icon="✅")
-            st.markdown(opt_details(stake_win, stake_draw, reward_win, reward_draw))
+            st.markdown(opt_details(stake_single, stake_double, reward_single, reward_double))
             st.markdown("")
             st.markdown(f'##### Guranteed minimum payout is {min_payout}.')
 
