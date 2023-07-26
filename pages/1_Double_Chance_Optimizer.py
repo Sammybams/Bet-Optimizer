@@ -1,8 +1,7 @@
 import streamlit as st
 st.set_page_config(page_title="Double-chance Bet Optimizer", page_icon="⚖️")
 
-st.markdown("# Double-chance Bet Optimizer")
-st.sidebar.header("Double-chance Bet Optimizer")
+st.title('Double-chance Bet Optimizer ⚖️')
 
 import pandas as pd
 
