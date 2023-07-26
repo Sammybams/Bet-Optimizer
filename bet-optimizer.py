@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv('secrets.env')
 
 @st.cache_data
-def load_data():
+def load_weights():
     # weights_url = os.environ.get("DATA")
     weights_url = st.secrets.bet_weights.URL
     weights = pd.read_parquet(weights_url).values
@@ -20,7 +20,7 @@ def load_data():
 # conn = st.experimental_connection('bet_weights', type=FilesConnection)
 # weights = conn.read(st.secrets.bet_weights.url, input_format='parquet').values
 
-weights = load_data()
+weights = load_weights()
 
 amount = st.number_input('Enter total amount for bet', min_value=0.01)
 odds_a = st.number_input('Enter odds for win', min_value=1.01)
